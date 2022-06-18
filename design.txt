@@ -1,0 +1,16 @@
+fib(3, 2) ?
+
+fib(N, F) :- N < 2 -> F = N ; fib_iter(0, 1, N, F).
+fib(3, 2) :- 3 < 2 no ; fib_iter(0, 1, 3, 2).
+
+fib_iter(_F, F, 1, F) :- !.
+
+fib_iter(0, 1, 3, 2) :-
+    F3 is 0 + 1,
+    N1 is 2,
+    fib_iter(1, 1, 2, 2).
+
+fib_iter(1, 1, 2, 2) :-
+    F3 is 1 + 1,
+    N1 is 1,
+    fib_iter(1,2,1,2).
